@@ -4,7 +4,7 @@ One idea: **a dark room where the only light is what comes under the door.** Eve
 
 ## Positioning
 
-**Raising dead tokens.** That is the category line, in one breath, everywhere: the X bio, the hero, the link card. A crowd brings a dead token back together, at one price for everyone, and can leave for a refund until it opens. "Pay to resurrect" is the hook, and the coffin vocabulary is the world it lives in. Lead with the category, explain the mechanics only where someone asks how.
+**Raising dead tokens.** That is the category line, in one breath, everywhere: the X bio, the hero, the link card. A crowd brings a dead token back together, at one price for everyone, and can leave for a refund until it opens. The coffin vocabulary is the world it lives in. "Pay to resurrect" is retired as a headline. Lead with the category, explain the mechanics only where someone asks how.
 
 ## Name
 
@@ -54,7 +54,7 @@ No other colours. Token logos are always shown in black and white (three flat to
 
 A funeral home that is calm, polite and a little too serious about something absurd.
 
-- Do: "raising dead tokens." / "pay to resurrect." / "no coffins yet. nobody has died. suspicious." / "survived by 41 of 100 seats."
+- Do: "raising dead tokens." / "a crowd brings it back." / "no coffins yet. nobody has died. suspicious." / "survived by 41 of 100 seats."
 - Money words stay literal: **seat, seat price, refund, buy, leave**. People must never decode a joke to know what they are paying for.
 - Funeral language is flavour and status only: sealed, opening, rising, risen, buried, rotted.
 - Never claim a token is dead unless it is. Never imply partnership with Pons: keep "not affiliated".

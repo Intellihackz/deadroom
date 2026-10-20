@@ -1,6 +1,6 @@
 # Deadroom
 
-Hook: **Pay to resurrect.**
+Category line: **Raising dead tokens.**
 
 A room for a dead token. A crowd pays in, and when enough wallets have joined, the token is relaunched as a new token on Pons. Everyone buys at the same price in one transaction.
 

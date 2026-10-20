@@ -1,6 +1,6 @@
 # Deadroom
 
-Pay to resurrect. A crowd fills a room for a dead token. When the last seat is taken, the token relaunches on Pons (Robinhood Chain) and every seat buys in the same transaction at one price. Spec and decisions: [SPEC.md](SPEC.md).
+Raising dead tokens. A crowd takes seats in a coffin for a dead token. When the last seat is taken, the token relaunches on Pons (Robinhood Chain) and every seat buys in the same transaction at one price. Spec and decisions: [SPEC.md](SPEC.md).
 
 - `server/` Hono + viem. One HD wallet per room (deposit, launcher, fee recipient, buyback). No contracts of our own: it calls the Pons v2 router `launchAndBuy`.
 - `web/` Vite + React. The server serves `web/dist`, so it deploys as one service.

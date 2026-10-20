@@ -21,7 +21,7 @@
 ## Concept card
 
 ```
-Idea:        scroll to fill a coffin seat by seat; the last seat lifts the lid
+Idea:        scroll to raise a coffin seat by seat; the last seat lifts the lid
 Metaphor:    a viewing room: dead things lie in coffins, a crowd gathers, the lid lifts
 Signature:   sticky hero stage. Scroll progress is the driver: seats light up, then the lid slides off and ember light rises
 Emotion:     quiet, a little ominous, then a small lift of relief at the last seat

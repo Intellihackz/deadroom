@@ -19,10 +19,10 @@ export function CoffinStage() {
         <div className="stage-text">
           <p className="eyebrow">robinhood chain / built on pons</p>
           <h1>
-            pay to <em>resurrect.</em>
+            raising <em>dead tokens.</em>
           </h1>
           <p className="tag">
-            <b>raising dead tokens.</b> same price for everyone, in the same block.
+            <b>a crowd brings it back.</b> same price for everyone, in the same block.
           </p>
           <p className="live" aria-live="off">
             <span className="mono big">
@@ -33,7 +33,7 @@ export function CoffinStage() {
             <span className="state" data-state="sealed">
               sealed
             </span>
-            <span className="muted hint">scroll to fill it</span>
+            <span className="muted hint">scroll to raise it</span>
             {PREVIEW && <span className="muted small example">an example coffin, not a real one</span>}
           </p>
           <div className="row">

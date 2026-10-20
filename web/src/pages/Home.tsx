@@ -85,25 +85,25 @@ export function Home({ cfg }: { cfg: Config | null }) {
           <li>
             <span className="n">01</span>
             <span className="t">
-              <b>dig up.</b> name the dead token, the seat count and the seat price.
+              <b>pick a dead token.</b> set how many seats and what one seat costs.
             </span>
           </li>
           <li>
             <span className="n">02</span>
             <span className="t">
-              <b>fill.</b> each wallet pays the exact price for one seat.
+              <b>take a seat.</b> every wallet pays the same price.
             </span>
           </li>
           <li>
             <span className="n">03</span>
             <span className="t">
-              <b>open.</b> the last seat relaunches the token. equal shares for everyone.
+              <b>it comes back.</b> the last seat relaunches the token, with equal shares for everyone.
             </span>
           </li>
           <li>
             <span className="n">04</span>
             <span className="t">
-              <b>buy back.</b> the coffin wallet collects trading fees and buys more of the token.
+              <b>buy back.</b> trading fees buy more of the token.
             </span>
           </li>
         </ol>

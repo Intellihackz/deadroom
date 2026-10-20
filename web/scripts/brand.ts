@@ -127,7 +127,7 @@ function headline(x: number, y: number, size: number) {
   return `<path d="${a.d}" fill="${BONE}"/><path d="${b.d}" fill="${EMBER}"/>`;
 }
 function headline2(x: number, y1: number, y2: number, size: number) {
-  return `<path d="${text(F500, "pay to", size, -0.075, x, y1).d}" fill="${BONE}"/><path d="${text(F500, "resurrect.", size, -0.075, x, y2).d}" fill="${EMBER}"/>`;
+  return `<path d="${text(F500, "raising", size, -0.075, x, y1).d}" fill="${BONE}"/><path d="${text(F500, "dead tokens.", size, -0.075, x, y2).d}" fill="${EMBER}"/>`;
 }
 const line = (str: string, x: number, y: number, size: number, color: string, font = F400) => `<path d="${text(font, str, size, 0.01, x, y).d}" fill="${color}"/>`;
 
@@ -136,7 +136,7 @@ const line = (str: string, x: number, y: number, size: number, color: string, fo
   const W = 1500;
   const H = 500;
   const scene = sceneStill({ fill: 1, lift: 0.62, box: { x: 880, y: -30, w: 560, h: 500 }, strokePx: 1.5, outline });
-  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="${INK}"/>${scene}${line("robinhood chain / built on pons", 334, 118, 17, ASH)}${headline2(330, 214, 300, 82)}${line("raising dead tokens. same price for everyone.", 334, 356, 21, ASH)}</svg>`;
+  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="${INK}"/>${scene}${line("robinhood chain / built on pons", 334, 118, 17, ASH)}${headline2(330, 214, 296, 74)}${line("a crowd brings it back. same price for everyone.", 334, 356, 21, ASH)}</svg>`;
   save("social/x-banner.svg", svg);
   save("social/x-banner.png", png(svg, 1500));
 }
@@ -148,7 +148,7 @@ const line = (str: string, x: number, y: number, size: number, color: string, fo
   const scene = sceneStill({ fill: 1, lift: 0.58, box: { x: 610, y: 20, w: 620, h: 554 }, strokePx: 1.6, outline });
   const wmW = 84 + 22 + text(F700, "deadroom", 72, -0.045).width;
   const wm = lockup(true).replace(/^<svg viewBox="[^"]+"/, `<svg x="64" y="52" width="260" height="${n(260 * (84 / wmW))}" viewBox="0 0 ${n(wmW)} 84"`);
-  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="${INK}"/>${scene}${wm}${headline2(60, 330, 440, 104)}${line("raising dead tokens. same price for everyone.", 66, 500, 22, ASH)}${line("robinhood chain / built on pons", 66, 578, 19, ASH)}</svg>`;
+  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="${INK}"/>${scene}${wm}${headline2(60, 330, 436, 92)}${line("a crowd brings it back. same price for everyone.", 66, 500, 22, ASH)}${line("robinhood chain / built on pons", 66, 578, 19, ASH)}</svg>`;
   save("social/og-image.svg", svg);
   const og = png(svg, 1200);
   save("social/og-image.png", og);
