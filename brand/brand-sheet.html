@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Deadroom brand sheet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  @font-face { font-family: "JB"; src: url("../web/node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2") format("woff2"); font-weight: 100 800; }
+  :root { --ink:#000; --bone:#f2f2f2; --ash:#858585; --line:#262626; --line2:#3a3a3a; --ember:#ff6a2b; --mono:"JB", ui-monospace, monospace; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #000; color: var(--bone); font: 400 13px/1.7 var(--mono); }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 56px 40px 80px; }
+  h1, h2, h3, p { margin: 0; font-weight: 400; }
+  h1 { font-size: 64px; letter-spacing: -0.075em; line-height: 0.96; }
+  h1 em { font-style: normal; color: var(--ember); }
+  h2 { font-size: 22px; letter-spacing: -0.05em; margin-bottom: 18px; }
+  .sub { color: var(--ash); margin: 12px 0 0; max-width: 62ch; }
+  section { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 32px; }
+  .row { display: grid; gap: 16px; }
+  .c2 { grid-template-columns: 1fr 1fr; } .c3 { grid-template-columns: repeat(3, 1fr); } .c4 { grid-template-columns: repeat(4, 1fr); }
+  .card { border: 1px solid var(--line); padding: 24px; display: grid; gap: 14px; align-content: start; }
+  .tag { color: var(--ash); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .on-dark { background: #000; } .on-light { background: #fff; color: #000; border-color: #fff; }
+  .stage { display: grid; place-items: center; min-height: 150px; }
+  .sw { height: 96px; border: 1px solid var(--line2); display: flex; align-items: flex-end; padding: 10px; font-size: 12px; }
+  .nums { display: grid; gap: 2px; }
+  .nums b { font-weight: 500; } .nums span { color: var(--ash); }
+  .grid { display: grid; grid-template-rows: repeat(5, 18px); grid-auto-flow: column; grid-auto-columns: 18px; gap: 4px; }
+  .grid i { border-radius: 3px; background: #141414; border: 1px solid var(--line); }
+  .grid i.t { background: var(--ember); border-color: transparent; }
+  .grid i.p { background: var(--bone); border-color: transparent; }
+  .type-d { font-size: 88px; letter-spacing: -0.075em; line-height: 0.96; }
+  .say { color: var(--bone); } .say.no { color: var(--ash); text-decoration: line-through; }
+  img { max-width: 100%; display: block; }
+  .logo-t { width: 64px; height: 64px; border: 1px solid var(--bone); display: grid; place-items: center; background: #000; font-weight: 700; color: var(--ember); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="tag">brand sheet / v1</p>
+  <h1 style="margin-top:14px">a dark room,<br />light under the <em>door.</em></h1>
+  <p class="sub">The only light in Deadroom is what comes under the door, and a seat that has been taken. Black, bone, grey, and ember for lit things only.</p>
+
+  <section>
+    <h2>mark and wordmark</h2>
+    <div class="row c2">
+      <div class="card on-dark"><span class="tag">wordmark on dark</span><div class="stage"><img src="wordmark/wordmark-on-dark.svg" width="420" alt="deadroom wordmark" /></div></div>
+      <div class="card on-light"><span class="tag" style="color:#555">wordmark on light</span><div class="stage"><img src="wordmark/wordmark-on-light.svg" width="420" alt="deadroom wordmark on light" /></div></div>
+    </div>
+    <div class="row c4" style="margin-top:16px">
+      <div class="card" style="background:#141414"><span class="tag">app tile</span><div class="stage"><img src="mark/mark-tile.svg" width="96" alt="" /></div></div>
+      <div class="card"><span class="tag">mark</span><div class="stage"><img src="mark/mark.svg" width="96" alt="" /></div></div>
+      <div class="card"><span class="tag">one colour, dark</span><div class="stage"><img src="mark/mark-bone.svg" width="96" alt="" /></div></div>
+      <div class="card on-light"><span class="tag" style="color:#555">on light</span><div class="stage"><img src="mark/mark-ink.svg" width="96" alt="" /></div></div>
+    </div>
+    <p class="sub">Minimum mark size 16 px, minimum wordmark width 96 px. Clear space is four times the height of the light line. The light line is the only ember. Never rotate, fill the arch or tint.</p>
+  </section>
+
+  <section>
+    <h2>colour</h2>
+    <div class="row c4">
+      <div><div class="sw" style="background:#000">#000000</div><div class="nums"><b>ground</b><span>page and tiles</span></div></div>
+      <div><div class="sw" style="background:#f2f2f2;color:#000">#f2f2f2</div><div class="nums"><b>ink (bone)</b><span>text and linework</span></div></div>
+      <div><div class="sw" style="background:#858585;color:#000">#858585</div><div class="nums"><b>muted</b><span>secondary text, passes AA</span></div></div>
+      <div><div class="sw" style="background:#ff6a2b;color:#000">#ff6a2b</div><div class="nums"><b>ember</b><span>lit things only</span></div></div>
+    </div>
+    <p class="sub">Token logos are always black and white, so no token's own colours ever compete with ember.</p>
+  </section>
+
+  <section>
+    <h2>type</h2>
+    <div class="row c2">
+      <div class="card"><span class="tag">jetbrains mono / display</span><div class="type-d">pay to <span style="color:var(--ember)">resurrect.</span></div></div>
+      <div class="card"><span class="tag">jetbrains mono / ui and numbers</span>
+        <p>Lowercase headings and buttons, 13 px body, tight tracking only at display sizes.</p>
+        <p style="font-size:28px;letter-spacing:-0.06em;font-variant-numeric:tabular-nums">37 / 100 seats &nbsp; 0.05 ETH</p>
+        <p class="tag">weights 400, 500 and 700. numbers are always mono and tabular.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>the seat grid</h2>
+    <div class="row c2">
+      <div class="card"><span class="tag">filling</span>
+        <div class="grid"><i class="t" style="opacity:.55"></i><i class="t" style="opacity:.55"></i><i class="t" style="opacity:.6"></i><i class="t" style="opacity:.65"></i><i class="t" style="opacity:.7"></i><i class="t" style="opacity:.72"></i><i class="t" style="opacity:.78"></i><i class="t" style="opacity:.82"></i><i class="t" style="opacity:.88"></i><i class="t" style="opacity:.92"></i><i class="t" style="opacity:1"></i><i class="t" style="opacity:1"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="tag">ember is a taken seat. older seats are dimmer, newer are brighter.</p></div>
+      <div class="card"><span class="tag">risen</span>
+        <div class="grid"><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="p"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="tag">bone is a seat that has been paid out after the relaunch.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>voice</h2>
+    <div class="row c2">
+      <div class="card"><span class="tag">say</span>
+        <p class="say">pay to resurrect.</p><p class="say">no coffins yet. nobody has died. suspicious.</p><p class="say">survived by 41 of 100 seats.</p><p class="say">leave before it opens and you get everything back.</p></div>
+      <div class="card"><span class="tag">do not say</span>
+        <p class="say no">revolutionary, seamless, next generation</p><p class="say no">guaranteed returns, to the moon</p><p class="say no">in partnership with Pons</p><p class="say no">offer a sacrifice to the coffin (say: take a seat)</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>on the network</h2>
+    <div class="row" style="grid-template-columns: 1fr 1fr">
+      <div class="card"><span class="tag">link preview 1200 x 630</span><img src="social/og-image.png" alt="link preview" /></div>
+      <div class="card"><span class="tag">x banner 1500 x 500, avatar 800</span><img src="social/x-banner.png" alt="x banner" /><img src="social/x-avatar.png" width="140" alt="x avatar" /></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

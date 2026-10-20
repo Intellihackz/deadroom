@@ -1,0 +1,10 @@
+{
+  "name": "deadroom",
+  "private": true,
+  "description": "Pay to resurrect. A crowd fills a coffin for a dead token and it relaunches on Pons.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "npm --prefix web ci --include=dev && npm --prefix web run build && npm --prefix server ci",
+    "start": "npm --prefix server start"
+  }
+}
