@@ -392,3 +392,7 @@ th { text-align: left; color: var(--ash); font-weight: 400; border-bottom: 1px s
 td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
 td a { text-decoration: none; } td a:hover { text-decoration: underline; }
 @media (max-width: 860px) { .stats { grid-template-columns: 1fr 1fr; } }
+
+.soon { opacity: 0.6; cursor: default; pointer-events: none; }
+
+.example { flex-basis: 100%; }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { api, type Config, type Room } from "../api";
 import { CoffinStage } from "../CoffinStage";
 import { RoomCard } from "../components";
+import { PREVIEW } from "../env";
 import { openCreate } from "../ui";
 
 export function Home({ cfg }: { cfg: Config | null }) {
@@ -9,6 +10,7 @@ export function Home({ cfg }: { cfg: Config | null }) {
   const [err, setErr] = useState("");
 
   useEffect(() => {
+    if (PREVIEW) return; // no server to ask
     const load = () =>
       api
         .rooms()
@@ -36,7 +38,18 @@ export function Home({ cfg }: { cfg: Config | null }) {
     <>
       <CoffinStage />
 
-      <section id="coffins" className="section">
+      {PREVIEW && (
+        <section id="coffins" className="section">
+          <div className="section-head">
+            <h2>waiting to rise</h2>
+            <span className="muted">opening soon</span>
+          </div>
+          <div className="empty">
+            <p>the first coffins open soon. nothing here takes money yet.</p>
+          </div>
+        </section>
+      )}
+      {!PREVIEW && (<section id="coffins" className="section">
         <div className="section-head">
           <h2>waiting to rise</h2>
           {cfg && <span className="muted">{sealed.length} sealed</span>}
@@ -52,7 +65,7 @@ export function Home({ cfg }: { cfg: Config | null }) {
           </div>
         )}
         <div className="grid">{cfg && sealed.map((r) => <RoomCard key={r.id} room={r} cfg={cfg} />)}</div>
-      </section>
+      </section>)}
 
       {rest.length > 0 && (
         <section className="section">

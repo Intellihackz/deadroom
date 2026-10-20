@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from "react";
 import { mountStage, sceneSvg } from "./motion/coffin";
+import { PREVIEW } from "./env";
 import { openCreate } from "./ui";
 
 /**
@@ -33,14 +34,23 @@ export function CoffinStage() {
               sealed
             </span>
             <span className="muted hint">scroll to fill it</span>
+            {PREVIEW && <span className="muted small example">an example coffin, not a real one</span>}
           </p>
           <div className="row">
-            <button className="btn" onClick={openCreate}>
-              dig up a coffin
-            </button>
-            <a className="cue" href="#coffins">
-              see the coffins
-            </a>
+            {PREVIEW ? (
+              <a className="btn" href="#how">
+                how it works
+              </a>
+            ) : (
+              <>
+                <button className="btn" onClick={openCreate}>
+                  dig up a coffin
+                </button>
+                <a className="cue" href="#coffins">
+                  see the coffins
+                </a>
+              </>
+            )}
           </div>
         </div>
         <div className="scene" data-scene dangerouslySetInnerHTML={{ __html: svg }} />

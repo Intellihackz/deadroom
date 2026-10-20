@@ -231,7 +231,9 @@ app.post("/api/rooms/:id/leave", async (c) => {
 });
 
 // ---- crawlers: robots and sitemap use SITE_URL, which is the public address (set it when you deploy) ----
-const SITE = (process.env.SITE_URL ?? "").replace(/\/$/, "");
+// A missing scheme is the easy mistake ("my-app.up.railway.app"), so add https:// instead of publishing broken addresses.
+const rawSite = (process.env.SITE_URL ?? "").trim().replace(/\/+$/, "");
+const SITE = rawSite && !/^https?:\/\//i.test(rawSite) ? `https://${rawSite}` : rawSite;
 app.get("/robots.txt", (c) => c.text(`User-agent: *\nAllow: /\n${SITE ? `Sitemap: ${SITE}/sitemap.xml\n` : ""}`));
 app.get("/sitemap.xml", (c) => {
   if (!SITE) throw new HttpError(404, "SITE_URL is not set");

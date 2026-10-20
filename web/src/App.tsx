@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { useEffect, useMemo, useRef, useState, type AnchorHTMLAttributes, type ReactNode } from "react";
 import { sceneSvg } from "./motion/coffin";
 import { api, type Config } from "./api";
+import { PREVIEW } from "./env";
 import { CreateModal } from "./pages/Create";
 import { openCreate } from "./ui";
 import { Home } from "./pages/Home";
@@ -74,7 +75,8 @@ export function Mark({ size = 28 }: { size?: number }) {
 export function useConfig() {
   const [cfg, setCfg] = useState<Config | null>(null);
   useEffect(() => {
-    api.config().then(setCfg).catch(() => { });
+    if (PREVIEW) return; // no server to ask
+    api.config().then(setCfg).catch(() => {});
   }, []);
   return cfg;
 }
@@ -169,6 +171,32 @@ function WalletModal() {
   );
 }
 
+function Soon() {
+  const svg = useMemo(() => sceneSvg(), []);
+  useEffect(() => {
+    const prev = document.title;
+    document.title = "Opening soon · Deadroom";
+    return () => {
+      document.title = prev;
+    };
+  }, []);
+  return (
+    <section className="nf">
+      <div className="nf-text">
+        <p className="eyebrow">opening soon</p>
+        <h1>
+          the lid is <em>still on.</em>
+        </h1>
+        <p className="lede">coffins, seats and the ledger open when the first room does. nothing on this site takes money yet.</p>
+        <Link to="/" className="btn">
+          back to the start
+        </Link>
+      </div>
+      <div className="scene nf-scene" aria-hidden="true" dangerouslySetInnerHTML={{ __html: svg }} />
+    </section>
+  );
+}
+
 function NotFound() {
   const svg = useMemo(() => sceneSvg(), []);
   useEffect(() => {
@@ -198,7 +226,7 @@ function NotFound() {
 export function App() {
   const path = usePath();
   const cfg = useConfig();
-  useEffect(() => initWallets(), []);
+  useEffect(() => (PREVIEW ? undefined : initWallets()), []);
 
   let page: ReactNode;
   const coffin = path.match(/^\/[cr]\/([a-z0-9]+)\/?$/i); // /r/ is the old path, kept so shared links still work
@@ -209,12 +237,13 @@ export function App() {
       curtain = null;
     };
   }, []);
-  if (coffin) page = <RoomPage id={coffin[1]} cfg={cfg} key={coffin[1]} />;
+  if (PREVIEW && path !== "/") page = path === "/new" || coffin || path === "/ledger" ? <Soon /> : <NotFound />;
+  else if (coffin) page = <RoomPage id={coffin[1]} cfg={cfg} key={coffin[1]} />;
   else if (path === "/ledger") page = <LedgerPage cfg={cfg} />;
   else if (path === "/" || path === "/new") page = <Home cfg={cfg} />;
   else page = <NotFound />;
   useEffect(() => {
-    if (path === "/new") openCreate(); // deep link: open the modal over the home page
+    if (path === "/new" && !PREVIEW) openCreate(); // deep link: open the modal over the home page
   }, [path]);
 
   return (
@@ -232,13 +261,21 @@ export function App() {
             <Link to="/#coffins" className="plain">
               coffins
             </Link>
-            <Link to="/ledger" className="plain">
-              ledger
-            </Link>
-            <button className="btn btn-sm" onClick={openCreate}>
-              dig up a coffin
-            </button>
-            <ConnectButton />
+            {PREVIEW ? (
+              <span className="btn btn-sm btn-ghost soon" aria-disabled="true">
+                opening soon
+              </span>
+            ) : (
+              <>
+                <Link to="/ledger" className="plain">
+                  ledger
+                </Link>
+                <button className="btn btn-sm" onClick={openCreate}>
+                  dig up a coffin
+                </button>
+                <ConnectButton />
+              </>
+            )}
           </nav>
         </div>
       </header>
@@ -247,13 +284,14 @@ export function App() {
       </main>
       <footer className="foot wrap">
         <p>{" "}
+          {PREVIEW ? "Deadroom is not open yet, and nothing on this site takes money. " : ""}
           {cfg?.feeBps ? `When a coffin relaunches, ${cfg.feeBps / 100}% of the pool pays the launch and gas, and the rest of that fee goes to the treasury. It is never taken from a refund. ` : ""}
-          <Link to="/ledger">Fees and burns</Link>. Launches run on Pons contracts."
+          {PREVIEW ? null : <><Link to="/ledger">Fees and burns</Link>. </>}Launches run on Pons contracts."
         </p>
       </footer>
-      <WalletModal />
+      {!PREVIEW && <WalletModal />}
       <div className="curtain" ref={curtainRef} aria-hidden="true" />
-      <CreateModal cfg={cfg} />
+      {!PREVIEW && <CreateModal cfg={cfg} />}
     </>
   );
 }
