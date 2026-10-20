@@ -264,7 +264,7 @@ if (existsSync(webDist)) {
         ok: html,
         notFound: html
           .replace(/<!--boot-->[\s\S]*<!--\/boot-->/, '<main class="wrap" id="main"><div class="stage-text boot"><p class="eyebrow">404</p><h1>nothing is <em>buried</em> here.</h1><p class="lede">this plot is empty. the coffin you wanted was never dug up, or it was moved.</p><p><a href="/" class="btn">back to the coffins</a></p></div></main>')
-          .replace("<title>Deadroom</title>", "<title>Nothing buried here · Deadroom</title>"),
+          .replace(/<title>[^<]*<\/title>/, "<title>Nothing buried here · Deadroom</title>"),
       };
     }
     return cached;

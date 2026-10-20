@@ -22,7 +22,7 @@ export function CoffinStage() {
             pay to <em>resurrect.</em>
           </h1>
           <p className="tag">
-            <b>dead token?</b> fill the coffin. same seat, same price, same block.
+            <b>raising dead tokens.</b> same price for everyone, in the same block.
           </p>
           <p className="live" aria-live="off">
             <span className="mono big">

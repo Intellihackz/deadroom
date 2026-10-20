@@ -2,6 +2,10 @@
 
 One idea: **a dark room where the only light is what comes under the door.** Everything on screen is black, bone and grey, and ember appears only on something that is lit.
 
+## Positioning
+
+**Raising dead tokens.** That is the category line, in one breath, everywhere: the X bio, the hero, the link card. A crowd brings a dead token back together, at one price for everyone, and can leave for a refund until it opens. "Pay to resurrect" is the hook, and the coffin vocabulary is the world it lives in. Lead with the category, explain the mechanics only where someone asks how.
+
 ## Name
 
 - **Deadroom** is the viewing room. Each dead token lies in a **coffin**. Creating one is **digging it up**.
@@ -50,7 +54,7 @@ No other colours. Token logos are always shown in black and white (three flat to
 
 A funeral home that is calm, polite and a little too serious about something absurd.
 
-- Do: "no coffins yet. nobody has died. suspicious." / "survived by 41 of 100 seats." / "pay to resurrect."
+- Do: "raising dead tokens." / "pay to resurrect." / "no coffins yet. nobody has died. suspicious." / "survived by 41 of 100 seats."
 - Money words stay literal: **seat, seat price, refund, buy, leave**. People must never decode a joke to know what they are paying for.
 - Funeral language is flavour and status only: sealed, opening, rising, risen, buried, rotted.
 - Never claim a token is dead unless it is. Never imply partnership with Pons: keep "not affiliated".

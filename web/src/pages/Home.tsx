@@ -78,8 +78,7 @@ export function Home({ cfg }: { cfg: Config | null }) {
 
       <section id="how" className="how">
         <p className="lede">
-          every dead token lies in a coffin. take a seat at one price, and when the last seat is taken the coffin opens: the token relaunches with its old name and logo, and the
-          whole pool buys it in a single transaction. leave before it opens and you get everything back.
+          every dead token can be raised. a crowd takes seats at one price, and when the last seat is taken the token relaunches with its old name and logo, with everyone buying in together at that price. leave before it opens and you get your eth back.
         </p>
 
         <ol className="steps">

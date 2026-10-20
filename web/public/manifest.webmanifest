@@ -1,7 +1,7 @@
 {
   "name": "Deadroom",
   "short_name": "Deadroom",
-  "description": "Fill a coffin for a dead token. When the last seat is taken it relaunches, and the whole room buys in at the same price.",
+  "description": "Deadroom raises dead tokens. A crowd takes seats at one price, and when the last seat is taken the token relaunches with everyone buying in together.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
