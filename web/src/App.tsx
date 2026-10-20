@@ -285,7 +285,7 @@ export function App() {
       <footer className="foot wrap">
         <p>{" "}
           {cfg?.feeBps ? `When a coffin relaunches, ${cfg.feeBps / 100}% of the pool pays the launch and gas, and the rest of that fee goes to the treasury. It is never taken from a refund. ` : ""}
-{PREVIEW ? null : <><Link to="/ledger">Fees and burns</Link>. </>}Launches run on Pons contracts."
+{PREVIEW ? null : <><Link to="/ledger">Fees and burns</Link>. </>}Launches run on Pons contracts.
         </p>
       </footer>
       {!PREVIEW && <WalletModal />}
