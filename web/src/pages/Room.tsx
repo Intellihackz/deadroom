@@ -206,7 +206,6 @@ export function RoomPage({ id, cfg }: { id: string; cfg: Config | null }) {
                 </>
               )}
               {msg && <p className={msg.tone === "error" ? "error" : msg.tone === "ok" ? "ok" : "muted"}>{msg.text}</p>}
-
               <details className="manual">
                 <summary>Send from somewhere else</summary>
                 <p className="muted">
