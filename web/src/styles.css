@@ -45,7 +45,9 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 .nav { position: sticky; top: 0; z-index: 5; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .nav-in { display: flex; justify-content: space-between; align-items: center; height: 64px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 17px; font-weight: 700; letter-spacing: -0.045em; }
-.nav nav { display: flex; gap: 22px; align-items: center; }
+.nav-left { display: flex; align-items: center; gap: 30px; min-width: 0; }
+.nav-left nav { display: flex; gap: 22px; align-items: center; }
+.nav-right { display: flex; gap: 8px; align-items: center; }
 .nav nav a.plain { color: var(--ash); text-decoration: none; }
 .nav nav a.plain:hover { color: var(--bone); }
 
@@ -225,7 +227,7 @@ small { font-size: 12px; }
   .facts-3 { grid-template-columns: 1fr 1fr; }
   .huge { font-size: 36px; }
   .room-head { align-items: flex-start; }
-  .nav nav { gap: 8px; }
+  .nav-left { gap: 14px; }
   .nav nav a.plain { display: none; }
   .nav .btn-sm { padding: 6px 9px; }
 }

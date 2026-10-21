@@ -60,7 +60,7 @@ export function Home({ cfg }: { cfg: Config | null }) {
           <div className="empty">
             <p>no coffins yet. nobody has died. suspicious.</p>
             <button className="btn btn-sm" onClick={openCreate}>
-              dig up the first one
+              raise the first one
             </button>
           </div>
         )}

@@ -44,7 +44,7 @@ export function CoffinStage() {
             ) : (
               <>
                 <button className="btn" onClick={openCreate}>
-                  dig up a coffin
+                  raise a dead token
                 </button>
                 <a className="cue" href="#coffins">
                   see the coffins

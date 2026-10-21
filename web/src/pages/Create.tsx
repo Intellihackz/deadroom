@@ -99,7 +99,7 @@ function Form({ cfg }: { cfg: Config | null }) {
       if (hours) body.deadlineHours = Number(hours);
       const { room } = await api.create(body, token);
       // The creator takes the first seat right away. Until they have, the coffin is unlisted and nobody else can sit.
-      setStep("Coffin dug up. Now take the first seat.");
+      setStep("Coffin ready. Now take the first seat.");
       try {
         const r = await payForSeat(room, account, cfg!.explorer, setStep);
         if (!r.accepted) setErr(`Your seat was not taken: ${r.reason}`);
@@ -120,9 +120,9 @@ function Form({ cfg }: { cfg: Config | null }) {
 
   return (
     <div className="overlay sheet" onClick={close}>
-      <form className="modal modal-lg card" role="dialog" aria-label="Dig up a coffin" onClick={(e) => e.stopPropagation()} onSubmit={submit}>
+      <form className="modal modal-lg card" role="dialog" aria-label="Raise a dead token" onClick={(e) => e.stopPropagation()} onSubmit={submit}>
         <div className="modal-head">
-          <h2>dig up a coffin</h2>
+          <h2>raise a dead token</h2>
           <button type="button" className="btn btn-sm btn-ghost" onClick={close}>
             close
           </button>
@@ -130,7 +130,7 @@ function Form({ cfg }: { cfg: Config | null }) {
         <p className="muted">Paste a dead token. Pick how many seats and what one seat costs. It relaunches when the last seat is taken.</p>
         {!signedIn && (
           <div className="gate">
-            <p>Connect your wallet to dig up a coffin. You sign one free message, and you take the first seat yourself, so you pay one seat price.</p>
+            <p>Connect your wallet to raise a dead token. You sign one free message, and you take the first seat yourself, so you pay one seat price.</p>
             <button type="button" className="btn btn-sm" onClick={openWalletModal}>
               connect wallet
             </button>
@@ -156,7 +156,7 @@ function Form({ cfg }: { cfg: Config | null }) {
         )}
         {info && info.openRooms.length > 0 && (
           <small className="warn">
-            Heads up: this token is already being dug up.{" "}
+            Heads up: someone is already raising this token.{" "}
             {info.openRooms.map((id) => (
               <a key={id} href={`/c/${id}`} onClick={() => closeCreate()}>
                 coffin {id}{" "}
@@ -236,9 +236,9 @@ function Form({ cfg }: { cfg: Config | null }) {
         {err && <p className="error">{err}</p>}
         {step && <p className="muted">{step}</p>}
         <button className="btn" disabled={busy || !cfg || !signedIn}>
-          {busy ? "Digging…" : signedIn ? `Dig it up and take seat 1 · ${eth(parseEther(price || "0"))} ETH` : "Connect wallet first"}
+          {busy ? "Raising…" : signedIn ? `Raise it and take seat 1 · ${eth(parseEther(price || "0"))} ETH` : "Connect wallet first"}
         </button>
-        <p className="fine">Anyone can dig up a coffin. Deadroom does not check that the token is really dead.</p>
+        <p className="fine">Anyone can raise any token. Deadroom does not check that the token is really dead.</p>
       </form>
     </div>
   );

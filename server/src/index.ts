@@ -194,12 +194,12 @@ app.get("/api/rooms/:id", (c) => {
 app.post("/api/rooms", async (c) => {
   // Digging up a coffin needs a signed-in wallet. That wallet is the creator and must take the first seat.
   const creator = sessionAddress(c.req.header("authorization"));
-  if (!creator) throw new HttpError(401, "connect your wallet and sign in to dig up a coffin");
+  if (!creator) throw new HttpError(401, "connect your wallet and sign in to raise a dead token");
   limitCreate(clientIp(c));
   const input = createSchema.parse(await c.req.json());
   const dupes = duplicateOf(input.tokenAddress);
   const room = createRoom(input, creator);
-  return c.json({ room: toPublic(room), warning: dupes.length ? "This token is already being dug up in another coffin." : undefined, otherRooms: dupes });
+  return c.json({ room: toPublic(room), warning: dupes.length ? "Someone is already raising this token in another coffin." : undefined, otherRooms: dupes });
 });
 
 app.post("/api/rooms/:id/join", async (c) => {

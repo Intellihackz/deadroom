@@ -253,30 +253,36 @@ export function App() {
       </a>
       <header className="nav">
         <div className="wrap nav-in">
-          <Link to="/" className="brand">
-            <Mark />
-            <span>deadroom</span>
-          </Link>
-          <nav>
-            <Link to="/#coffins" className="plain">
-              coffins
+          <div className="nav-left">
+            <Link to="/" className="brand">
+              <Mark />
+              <span>deadroom</span>
             </Link>
+            <nav aria-label="Main">
+              <Link to="/#coffins" className="plain">
+                coffins
+              </Link>
+              {!PREVIEW && (
+                <Link to="/ledger" className="plain">
+                  ledger
+                </Link>
+              )}
+            </nav>
+          </div>
+          <div className="nav-right">
             {PREVIEW ? (
               <span className="btn btn-sm btn-ghost soon" aria-disabled="true">
                 opening soon
               </span>
             ) : (
               <>
-                <Link to="/ledger" className="plain">
-                  ledger
-                </Link>
                 <button className="btn btn-sm" onClick={openCreate}>
-                  dig up a coffin
+                  raise a dead token
                 </button>
                 <ConnectButton />
               </>
             )}
-          </nav>
+          </div>
         </div>
       </header>
       <main className="wrap" id="main" tabIndex={-1}>
