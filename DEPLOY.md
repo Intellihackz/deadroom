@@ -54,6 +54,17 @@ Then Settings, Networking: generate a domain or add your own, put that address i
 
 Until the platform token exists, the whole net fee goes to the treasury. When you have launched the token, set `PLATFORM_TOKEN` to its address and redeploy. From then on `BURN_SHARE_BPS` (default `5000`, half) of each net fee goes to a small burn wallet, which every 10 minutes buys the token on its Pons curve and sends it to the dead address. Every burn appears on `/ledger`. Run one on demand with `POST /api/admin/burn` and the `x-admin-key` header. Once the token **graduates** to its pool, burns pause (the pool buy is not built yet) and the ledger says so.
 
+### Later: showing the token address and the buy button
+
+The site has a contract-address bar above the nav and a large card on the home page, both saying "coming soon" with the buy button switched off. When the token exists, set these where the site is built (Railway Variables) and redeploy, since they are read at build time:
+
+```
+VITE_TOKEN_CA=0x...your token address...
+VITE_TOKEN_SYMBOL=TICKER
+```
+
+Only an exact `0x` plus 40 hex characters is accepted. The buy button then opens `ponsfamily.com/launchpad/<address>`.
+
 ## 5. Check it
 
 - `https://your-address/health` shows `"persistent": true` and a file under `/data`.

@@ -4,6 +4,7 @@ import { sceneSvg } from "./motion/coffin";
 import { scrollToId, scrollToTop, startLenis } from "./motion/lenis";
 import { api, type Config } from "./api";
 import { PREVIEW } from "./env";
+import { TokenBar } from "./TokenStrip";
 import { CreateModal } from "./pages/Create";
 import { openCreate } from "./ui";
 import { Home } from "./pages/Home";
@@ -266,6 +267,7 @@ export function App() {
       <a href="#main" className="skip">
         skip to content
       </a>
+      <TokenBar />
       <header className="nav">
         <div className="wrap nav-in">
           <div className="nav-left">

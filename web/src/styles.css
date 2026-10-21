@@ -410,3 +410,21 @@ td a { text-decoration: none; } td a:hover { text-decoration: underline; }
 .foot a { color: var(--ash-2); }
 @media (max-width: 560px) { .icon-btn { display: none; } }
 @media (prefers-reduced-motion: reduce) { .icon-btn::before { transition: none; } }
+
+/* token address: a bar above the nav on every page, and a large card on the home page */
+.tbar { background: var(--ink-2); border-bottom: 1px solid var(--line); }
+.tbar-in { display: flex; align-items: center; gap: 14px; min-height: 38px; padding-top: 4px; padding-bottom: 4px; }
+.tbar-label { color: var(--bone); font-size: 12px; letter-spacing: -0.02em; white-space: nowrap; }
+.tbar-ca { flex: 1; min-width: 0; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tbar-ca .short { display: none; }
+.tbar-actions { display: flex; gap: 8px; align-items: center; }
+.tbar .btn-sm { padding: 4px 10px; font-size: 11.5px; }
+.tcard { margin: 8px 0 4px; padding: 22px; display: grid; gap: 14px; border-color: var(--line-2); }
+.tcard-head { display: flex; align-items: center; justify-content: space-between; }
+.tag-small { color: var(--ash); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.live-dot { width: 8px; height: 8px; background: var(--ember); border-radius: 50%; box-shadow: 0 0 10px var(--ember); }
+.tcard-ca { display: block; font-size: clamp(15px, 2.1vw, 26px); letter-spacing: -0.04em; color: var(--bone); background: var(--ink); border: 1px solid var(--line-2); padding: 14px 16px; overflow-x: auto; white-space: nowrap; user-select: all; }
+@media (max-width: 900px) { .tbar-ca .long { display: none; } .tbar-ca .short { display: inline; } }
+@media (max-width: 480px) { .tbar-label { display: none; } .tbar-in { gap: 8px; } }
+.btn.soon:not(.btn-ghost) { background: transparent; color: var(--ash); border-color: var(--line-2); opacity: 1; }
+.btn.soon:not(.btn-ghost)::before { display: none; }

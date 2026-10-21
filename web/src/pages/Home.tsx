@@ -3,6 +3,7 @@ import { api, type Config, type Room } from "../api";
 import { CoffinStage } from "../CoffinStage";
 import { RoomCard } from "../components";
 import { PREVIEW } from "../env";
+import { TokenCard } from "../TokenStrip";
 import { scrollToId } from "../motion/lenis";
 import { openCreate } from "../ui";
 
@@ -38,6 +39,8 @@ export function Home({ cfg }: { cfg: Config | null }) {
   return (
     <>
       <CoffinStage />
+
+      <TokenCard />
 
       {PREVIEW && (
         <section id="coffins" className="section">
