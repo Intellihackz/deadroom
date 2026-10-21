@@ -33,7 +33,7 @@ gh repo create deadroom --private --source=. --push
 ## 3. Create the Railway service
 
 1. New Project, then Deploy from GitHub repo, then pick `deadroom`.
-2. It reads `railway.json` for the build command, the start command and the health check on `/health`.
+2. It reads `railway.json`, which tells Railway to build with the `Dockerfile` in this repo (so the build does not depend on Railway's auto-detected builder) and to check `/health`. The Dockerfile builds the website, then runs the server that serves it. Your service variables, including the `VITE_*` ones, are passed to the build automatically.
 3. In the service, go to Volumes and add one with mount path `/data`. **Do this before the first real coffin.** Without it, every redeploy wipes who paid.
 
 ## 4. Variables
