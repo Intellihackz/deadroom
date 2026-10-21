@@ -401,3 +401,12 @@ td a { text-decoration: none; } td a:hover { text-decoration: underline; }
 
 /* the hero headline breaks after "raising", so "dead tokens." stays together on its own line */
 .stage-text h1 em, .boot h1 em { display: block; }
+
+/* X link in the nav */
+.icon-btn { display: inline-grid; place-items: center; width: 33px; height: 33px; border: 1px solid var(--line-2); color: var(--bone); text-decoration: none; border-radius: var(--radius); position: relative; overflow: hidden; isolation: isolate; }
+.icon-btn::before { content: ""; position: absolute; inset: 0; background: var(--bone); transform: translateY(101%); transition: transform 0.38s cubic-bezier(0.2, 0.8, 0.2, 1); z-index: -1; }
+.icon-btn:hover::before, .icon-btn:focus-visible::before { transform: translateY(0); }
+.icon-btn:hover, .icon-btn:focus-visible { color: #000; }
+.foot a { color: var(--ash-2); }
+@media (max-width: 560px) { .icon-btn { display: none; } }
+@media (prefers-reduced-motion: reduce) { .icon-btn::before { transition: none; } }

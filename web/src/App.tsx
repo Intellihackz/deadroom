@@ -82,6 +82,19 @@ export function useConfig() {
   return cfg;
 }
 
+const X_URL = "https://x.com/_deadroom";
+
+/** A plain X glyph (two strokes), as a square icon button. Hidden on phones, where the nav has no room. */
+function XLink() {
+  return (
+    <a className="icon-btn" href={X_URL} target="_blank" rel="noreferrer" aria-label="Deadroom on X" title="@_deadroom on X">
+      <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+        <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" strokeWidth="2.6" fill="none" strokeLinecap="square" />
+      </svg>
+    </a>
+  );
+}
+
 function ConnectButton() {
   const { account } = useWallet();
   if (!account)
@@ -272,6 +285,7 @@ export function App() {
             </nav>
           </div>
           <div className="nav-right">
+            <XLink />
             {PREVIEW ? (
               <span className="btn btn-sm btn-ghost soon" aria-disabled="true">
                 opening soon
@@ -293,7 +307,11 @@ export function App() {
       <footer className="foot wrap">
         <p>{" "}
           {cfg?.feeBps ? `When a coffin relaunches, ${cfg.feeBps / 100}% of the pool pays the launch and gas, and the rest of that fee goes to the treasury. It is never taken from a refund. ` : ""}
-{PREVIEW ? null : <><Link to="/ledger">Fees and burns</Link>. </>}Launches run on Pons contracts.
+{PREVIEW ? null : <><Link to="/ledger">Fees and burns</Link>. </>}Launches run on Pons contracts.{" "}
+          <a href={X_URL} target="_blank" rel="noreferrer">
+            @_deadroom on X
+          </a>
+          .
         </p>
       </footer>
       {!PREVIEW && <WalletModal />}

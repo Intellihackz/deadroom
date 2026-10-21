@@ -6,6 +6,11 @@ One idea: **a dark room where the only light is what comes under the door.** Eve
 
 **Raising dead tokens.** That is the category line, in one breath, everywhere: the X bio, the hero, the link card. A crowd brings a dead token back together, at one price for everyone, and can leave for a refund until it opens. The coffin vocabulary is the world it lives in. "Pay to resurrect" is retired as a headline. Lead with the category, explain the mechanics only where someone asks how.
 
+## Where we are
+
+- Site: https://deadroom.lol
+- X: https://x.com/_deadroom (@_deadroom)
+
 ## Name
 
 - **Deadroom** is the viewing room. Each dead token lies in a **coffin**. Creating one is **digging it up**.
