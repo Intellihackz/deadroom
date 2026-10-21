@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { api, type Config, type TokenInfo } from "../api";
 import { navigate } from "../App";
+import { lockScroll } from "../motion/lenis";
 import { payForSeat } from "../seat";
 import { friendly, openWalletModal, useWallet } from "../wallet";
 import { closeCreate, useCreateOpen } from "../ui";
@@ -40,8 +41,10 @@ function Form({ cfg }: { cfg: Config | null }) {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
     window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    lockScroll(true);
     return () => {
       window.removeEventListener("keydown", onKey);
+      lockScroll(false);
       document.body.style.overflow = "";
     };
   }, []);
@@ -120,7 +123,7 @@ function Form({ cfg }: { cfg: Config | null }) {
 
   return (
     <div className="overlay sheet" onClick={close}>
-      <form className="modal modal-lg card" role="dialog" aria-label="Raise a dead token" onClick={(e) => e.stopPropagation()} onSubmit={submit}>
+      <form className="modal modal-lg card" data-lenis-prevent role="dialog" aria-label="Raise a dead token" onClick={(e) => e.stopPropagation()} onSubmit={submit}>
         <div className="modal-head">
           <h2>raise a dead token</h2>
           <button type="button" className="btn btn-sm btn-ghost" onClick={close}>

@@ -294,7 +294,7 @@ export function RoomPage({ id, cfg }: { id: string; cfg: Config | null }) {
           <div className="card pad">
             <h3>Seats</h3>
             {seatsShown.length === 0 && <p className="muted">Nobody yet. Be the first.</p>}
-            <ul className="seatlist">
+            <ul className="seatlist" data-lenis-prevent>
               {seatsShown.map((s) => (
                 <li key={s.depositTx} className={s.address === me ? "me" : ""}>
                   <Avatar address={s.address} />
@@ -316,7 +316,7 @@ export function RoomPage({ id, cfg }: { id: string; cfg: Config | null }) {
 
           <div className="card pad">
             <h3>Activity</h3>
-            <ul className="log">
+            <ul className="log" data-lenis-prevent>
               {[...room.log].reverse().slice(0, 12).map((l, i) => (
                 <li key={i}>
                   <span className="muted small">{ago(l.t)}</span> {l.msg}

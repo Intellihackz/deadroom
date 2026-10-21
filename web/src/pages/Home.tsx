@@ -3,6 +3,7 @@ import { api, type Config, type Room } from "../api";
 import { CoffinStage } from "../CoffinStage";
 import { RoomCard } from "../components";
 import { PREVIEW } from "../env";
+import { scrollToId } from "../motion/lenis";
 import { openCreate } from "../ui";
 
 export function Home({ cfg }: { cfg: Config | null }) {
@@ -28,7 +29,7 @@ export function Home({ cfg }: { cfg: Config | null }) {
   useEffect(() => {
     if (!rooms || !location.hash) return;
     const el = document.getElementById(location.hash.slice(1));
-    if (el && window.scrollY < 50) requestAnimationFrame(() => el.scrollIntoView({ block: "start" }));
+    if (el && window.scrollY < 50) requestAnimationFrame(() => scrollToId(location.hash.slice(1)));
   }, [rooms !== null]);
 
   const sealed = rooms?.filter((r) => r.status === "open") ?? [];

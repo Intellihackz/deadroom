@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { useEffect, useMemo, useRef, useState, type AnchorHTMLAttributes, type ReactNode } from "react";
 import { sceneSvg } from "./motion/coffin";
+import { scrollToId, scrollToTop, startLenis } from "./motion/lenis";
 import { api, type Config } from "./api";
 import { PREVIEW } from "./env";
 import { CreateModal } from "./pages/Create";
@@ -16,8 +17,8 @@ let curtain: HTMLElement | null = null;
 export function navigate(to: string) {
   const [path, hash] = to.split("#");
   const jump = () => {
-    if (!hash) return window.scrollTo(0, 0);
-    requestAnimationFrame(() => document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    if (!hash) return scrollToTop();
+    requestAnimationFrame(() => scrollToId(hash));
   };
   const go = () => {
     history.pushState({}, "", to);
@@ -111,7 +112,7 @@ function WalletModal() {
 
   return (
     <div className="overlay top" onClick={closeWalletModal}>
-      <div className="modal card" role="dialog" aria-label="Connect a wallet" onClick={(e) => e.stopPropagation()}>
+      <div className="modal card" data-lenis-prevent role="dialog" aria-label="Connect a wallet" onClick={(e) => e.stopPropagation()}>
         <div className="modal-head">
           <h2>{account ? "wallet" : "connect a wallet"}</h2>
           <button className="btn btn-sm btn-ghost" onClick={closeWalletModal}>
@@ -227,6 +228,7 @@ export function App() {
   const path = usePath();
   const cfg = useConfig();
   useEffect(() => (PREVIEW ? undefined : initWallets()), []);
+  useEffect(() => startLenis(), []);
 
   let page: ReactNode;
   const coffin = path.match(/^\/[cr]\/([a-z0-9]+)\/?$/i); // /r/ is the old path, kept so shared links still work

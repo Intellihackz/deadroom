@@ -76,7 +76,7 @@ export function LedgerPage({ cfg }: { cfg: Config | null }) {
           <section className="section">
             <div className="section-head"><h2>by coffin</h2><span className="muted">{l.coffins.length}</span></div>
             {l.coffins.length === 0 && <p className="muted">No coffin has relaunched yet.</p>}
-            <div className="tablewrap">
+            <div className="tablewrap" data-lenis-prevent>
               <table>
                 <thead><tr><th>coffin</th><th>fee</th><th>launch and gas</th><th>net</th><th>to treasury</th><th>to burn wallet</th></tr></thead>
                 <tbody>
@@ -98,7 +98,7 @@ export function LedgerPage({ cfg }: { cfg: Config | null }) {
           <section className="section">
             <div className="section-head"><h2>burns</h2><span className="muted">{l.burns.length}</span></div>
             {l.burns.length === 0 && <p className="muted">{l.platformToken ? "No burn yet." : "No burns yet. They start when the platform token exists."}</p>}
-            <div className="tablewrap">
+            <div className="tablewrap" data-lenis-prevent>
               {l.burns.length > 0 && (
                 <table>
                   <thead><tr><th>when</th><th>eth spent</th><th>tokens burned</th><th>buy</th><th>burn</th></tr></thead>
